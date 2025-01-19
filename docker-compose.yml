@@ -1,4 +1,3 @@
-version: "3"
 services:
   api:
     restart: always
@@ -9,12 +8,14 @@ services:
       - "db"
     environment:
       NODE_ENV: "production"
-      DATABASE: "mongodb://db/place"
       PORT: 3000
       ONLY_LISTEN_LOCAL: "false"
   db:
     image: mongo
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: place
+      MONGO_INITDB_ROOT_PASSWORD: password    # Don't use this password in production
     volumes:
       - mongo-volume:/data/db
     expose:

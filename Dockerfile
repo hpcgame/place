@@ -1,5 +1,5 @@
-FROM node:carbon
-LABEL maintainer="applebetas@dynastic.co"
+FROM node:18
+LABEL maintainer="hpcgame@pku.edu.cn"
 
 # Create app directory
 WORKDIR /usr/src/app
